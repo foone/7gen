@@ -16,7 +16,7 @@ exepath=r"C:\Program Files\Microsoft Kids\3D Movie Maker\3DMOVIE.EXE" # Only nee
 
 #Don't change here down:
 #actorextractor: Extracts 3dmm model-trees from the 3dmm datafiles
-#Copyright (C) 2004 Travis Wells / Philip D. Bober
+#Copyright (C) 2004-2015 Foone Turing
 #
 #This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 #

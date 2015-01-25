@@ -12,7 +12,7 @@ install=True # set to True to install, False to leave in the current directory
 
 #Don't change this stuff:
 #OBJ2VXP: Converts Wavefront OBJ files to v3dmm expansions
-#Copyright (C) 2004 Travis Wells / Philip D. Bober
+#Copyright (C) 2004-2015 Foone Turing
 #
 #This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 #

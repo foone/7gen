@@ -9,7 +9,7 @@ uniqueid=0 # Set to 0 if you don't have one.
 
 #Don't change this stuff:
 #RGB2VXP: Converts BMP files to VXP expansions
-#Copyright (C) 2004 Travis Wells / Philip D. Bober
+#Copyright (C) 2004-2015 Foone Turing
 #
 #This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 #
