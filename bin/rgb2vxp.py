@@ -52,11 +52,6 @@ def CreateVXPExpansionFromColor(name,author,outfile,shortname,color,uniqueid,pro
 					raise SaveError('Bad color')
 				if outfile=='':
 					raise SaveError('No outfile')
-				def GetID():
-					try:
-						return int(urlopen('http://v.3dmm2.com/scripts/makeid.php?simple=1').read())
-					except:
-						raise SaveError('Couldn\'t get ID')
 				def SaveCFG(outzip):
 					cfg='Name=%s\nAuthor=%s\nOriginal Author=%s\nType=Portable\nContent=Backgrounds\nDate=%i\nGenerator=rgb2vxp %s\n' % (name,author,author,int(time()),version)
 					outzip.writestr(shortname+'.cfg',cfg)

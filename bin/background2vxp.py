@@ -53,11 +53,6 @@ def CreateBackgroundFromImages(name,author,outfile,shortname,background,depth,pr
 					raise SaveError('No background!')
 				if outfile=='':
 					raise SaveError('No outfile')
-				def GetID():
-					try:
-						return int(urlopen('http://v.3dmm2.com/scripts/makeid.php?simple=1').read())
-					except:
-						raise SaveError('Couldn\'t get ID')
 				def SaveCFG(outzip):
 					cfg='Name=%s\nAuthor=%s\nOriginal Author=%s\nType=Portable\nContent=Backgrounds\nDate=%i\nGenerator=background2vxp %s\n' % (name,author,author,int(time()),version)
 					outzip.writestr(shortname+'.cfg',cfg)

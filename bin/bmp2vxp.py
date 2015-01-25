@@ -47,11 +47,6 @@ def CreateVXPExpansionFromBMP(name,author,origauth,outfile,shortname,image,uniqu
 					raise SaveError('image')
 				if outfile=='':
 					raise SaveError('No outfile')
-				def GetID():
-					try:
-						return int(urlopen('http://v.3dmm2.com/scripts/makeid.php?simple=1').read())
-					except:
-						raise SaveError('Couldn\'t get ID')
 				def SaveCFG(outzip):
 					cfg='Name=%s\nAuthor=%s\nOriginal Author=%s\nType=Portable\nContent=Textures\nDate=%i\nGenerator=bmp2vxp %s\n' % (name,author,origauth,int(time()),version)
 					outzip.writestr(shortname+'.cfg',cfg)

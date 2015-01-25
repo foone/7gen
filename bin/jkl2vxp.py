@@ -50,11 +50,6 @@ version='0.1'
 def CreateVXPExpansionFromJediKnightMap(name,author,origauth,outfile,shortname,jklmap,uniqueid,leveltype,gobdirs,imagemode,cache,subdivide_threshold,progress,statusfunc=None,numtexfunc=None):
 	created_files=[]
 	try:
-				def GetID():
-					try:
-						return int(urlopen('http://v.3dmm2.com/scripts/makeid.php?simple=1').read())
-					except:
-						raise SaveError('Couldn\'t get ID')
 				def SaveCFG(outzip):
 					cfg='Name=%s\nAuthor=%s\nOriginal Author=%s\nType=Portable\nContent=Props\nDate=%i\nGenerator=jkl2vxp %s\n' % (name,author,origauth,int(time()),version)
 					outzip.writestr(shortname+'.cfg',cfg)

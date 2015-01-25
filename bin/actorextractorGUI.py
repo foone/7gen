@@ -74,7 +74,6 @@ class actorextractorGUI(ConverterBase):
 		self.idbox=sockgui.TextBox(ui,[40,ys+7],10)
 		ui.add(self.idbox)
 		ui.add(sockgui.Button(ui,[110,ys+7],'Generate ID',callback=self.generateNewID))
-		ui.add(sockgui.Button(ui,[180,ys+7],'Get ID from 3dmm2.com',callback=self.getNewID))
 		
 		ys=self.makeTab(ys+30+5,66,'Control')
 		self.progress=sockgui.ProgressBox(ui,[20,ys+10],[335,16],maxvalue=10)

@@ -85,7 +85,6 @@ class md22vxpGUI(ConverterBase):
 		self.idbox.setAllowedKeys('0123456789')	
 		ui.add(self.idbox)
 		ui.add(sockgui.Button(ui,[110,ys+7],'Generate ID',callback=self.generateNewID))
-		#ui.add(sockgui.Button(ui,[180,ys+7],'Get ID from 3dmm2.com',callback=self.getNewID))
 		
 		ys=self.makeTab(135+185+5,88,'Preview',200,164)
 		self.previewbox=sockgui.ImageBox(ui,[209,ys+9],[72,72])
