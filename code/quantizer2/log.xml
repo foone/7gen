@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+  The format of the log is defined by embedding special format characters:
+
+    %d   domain
+    %e   event
+    %f   function
+    %l   line
+    %m   module
+    %p   process id
+    %r   real CPU time
+    %t   wall clock time
+    %u   user CPU time
+    %v   version
+    %%   percent sign
+    \n   newline
+    \r   carriage return
+-->
+<logmap>
+  <log events="None" />
+  <log output="console" />
+  <log filename="Magick-%d.log" />
+  <log generations="3" />
+  <log limit="2000" />
+  <log format="%t %r %u %v %c[%p]: %m/%f/%l/%d\n  %e"  />
+</logmap>

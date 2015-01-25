@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<configuremap>
+  <configure name="host" value="Windows" />
+</configuremap>
