@@ -18,7 +18,7 @@ sockgui.setDataPath('code')
 from converterbase import ConverterBase
 import ConfigParser
 
-version='0.3c'
+version='0.5'
 
 modules=[]
 try:
@@ -104,7 +104,7 @@ class SevenGen(ConverterBase):
 		except:
 			pass
 		try:
-			self.config.set('main','silly',self.sillybox.isChecked())
+			self.config.set('main','silly',str(self.sillybox.isChecked()))
 		except AttributeError:
 			pass
 		fp=open('vxp.ini','w')
