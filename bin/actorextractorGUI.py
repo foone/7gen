@@ -43,10 +43,10 @@ class actorextractorGUI(ConverterBase):
 		self.filenamelabel=sockgui.Label(ui,[100,ys+74],'')
 		ui.add(self.filenamelabel)
 
-		self.namebox=      sockgui.TextBox(ui,[100,ys+10-3],50)
-		self.authorbox=    sockgui.TextBox(ui,[100,ys+26-3],50)
-		self.pathbox=      sockgui.TextBox(ui,[100,ys+42-3],50)
-		self.shortnamebox= sockgui.TextBox(ui,[100,ys+58-3],50,callback=self.onShortNameChanged)
+		self.namebox=      sockgui.TextBox(ui,[100,ys+10-3],70)
+		self.authorbox=    sockgui.TextBox(ui,[100,ys+26-3],70)
+		self.pathbox=      sockgui.TextBox(ui,[100,ys+42-3],70)
+		self.shortnamebox= sockgui.TextBox(ui,[100,ys+58-3],70,callback=self.onShortNameChanged)
 		self.shortnamebox.setAllowedKeys(sockgui.UPPERCASE+sockgui.LOWERCASE+sockgui.DIGITS+'._-')
 		self.authorbox.setText(self.getAuthor())
 		mspath=Get3dmmInstallDirectory()
@@ -176,7 +176,7 @@ class actorextractorGUI(ConverterBase):
 
 def RunConverter(title):
 	pygame.display.set_caption(title+'ActorExtractor '+actorextractor.version)
-	screen=pygame.display.set_mode((375,400))
+	screen=pygame.display.set_mode((470,400))
 	gui=actorextractorGUI(screen)
 	return gui.run()
 if __name__=='__main__':
