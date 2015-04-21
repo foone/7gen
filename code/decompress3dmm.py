@@ -14,26 +14,30 @@ class Decompressor(object):
 	def __init__(self, exe_file):
 		decomp_proxy_dll = os.path.join(os.path.dirname(os.path.abspath(__file__)),"DecompProxy.dll")
 		decompdll = cdll.LoadLibrary(decomp_proxy_dll)
-		DLLInit=getattr(decompdll,'?Init@@YAHPBD@Z')
+		DLLInit=getattr(decompdll,'DP_Init')
 		DLLInit.argtypes=[c_char_p]
-		self.DLLShutdown=getattr(decompdll,'?Shutdown@@YAHXZ')
-		self.GetSize=GetSize=getattr(decompdll,'?GetSize@@YAHPAEH@Z') # TEH UGLY!?
+		DLLInit.restype=c_void_p
+		self.DLLShutdown=getattr(decompdll,'DP_Shutdown')
+		self.DLLShutdown.argtypes=[c_void_p]
+		self.GetSize=GetSize=getattr(decompdll,'DP_GetSize')
 		GetSize.argtypes=[c_char_p,c_int]
-		self.DLLDecompress=DLLDecompress=getattr(decompdll,'?DecompressSmart@@YAHPAEH0@Z')
-		DLLDecompress.argtypes=[c_char_p,c_int,c_char_p]
+		self.DLLDecompress=DLLDecompress=getattr(decompdll,'DP_DecompressSmart')
+		DLLDecompress.argtypes=[c_void_p,c_char_p,c_int,c_char_p]
 
-		if not DLLInit(exe_file):
+		ret = self.ctx = DLLInit(exe_file)
+		if not ret:
 			raise OSError("Failed to initialize decompression")
 
 	def shutdown():
-		self.DLLShutdown()
+		self.DLLShutdown(self.ctx)
 
 	def decompress(self, compressed_string):
 		length=self.GetSize(compressed_string,len(compressed_string))
-		if length<0:
+		if length<=0:
 			return None
 		outbuffer=c_buffer(length)
-		if not self.DLLDecompress(compressed_string,len(compressed_string),outbuffer):
+		if not self.DLLDecompress(self.ctx, compressed_string,len(compressed_string),outbuffer):
 			return None
 		else:
 			return str(outbuffer.raw)
+
