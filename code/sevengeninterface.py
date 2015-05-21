@@ -18,7 +18,7 @@ sockgui.setDataPath('code')
 from converterbase import ConverterBase
 import ConfigParser
 
-version='0.6'
+version='0.7'
 
 modules=[]
 try:

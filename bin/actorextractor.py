@@ -327,6 +327,7 @@ class VerySimpleMBMPReplacer:
 		else:
 			return thing
 def UpdateTMAPs(shortname):
+	sys.path.insert(0,os.path.abspath('../code'))
 	pygame.init()
 	texconv=TextureConverter(pygame.image.load('../code/palette.bmp'))
 	tiledata=open(shortname+'.tsl').readlines()
