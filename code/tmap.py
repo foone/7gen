@@ -14,6 +14,7 @@ from error import LoadError,CompressedError
 from struct import pack,unpack
 import cStringIO
 from cStringIO import StringIO
+import sys,os
 palette=None
 def loadPalette():
 	global palette
@@ -81,4 +82,15 @@ class TMAP:
 		fop.write(pygame.image.tostring(self.surf,'P',True))
 #		raise LoadError('NOT IMPLEMENTS')
 
-
+if __name__ == '__main__':
+	if len(sys.argv)<2:
+		print('Usage: tmap.py <image.png> [out.tmap]')
+		sys.exit()
+	image_filename=sys.argv[1]
+	if len(sys.argv)==3:
+		tmap_filename = sys.argv[2]
+	else:
+		tmap_filename = os.path.splitext(image_filename)[0]+'.tmap'
+	tmap = TMAP(image_filename)
+	tmap.save(tmap_filename,asTMAP=True)
+	print('Saved to {}'.format(tmap_filename))
